@@ -7,15 +7,15 @@ import styles from '../styles/Home.module.css'
 export default function Home() {
   return (
     <div className={styles.container}>
-
       <Meta />
-
       <main className={styles.main}>
-
         <Author />
-        <Book />
-        <Subscribe />
 
+        <div className={styles.cardFlex}>
+          <Book />
+          <Subscribe />
+        </div>
+      
       </main>
     </div>
   )

@@ -1,19 +1,22 @@
 import React from 'react'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Subscribe.module.css'
 
 const Subscribe = () => {
   return (
-    <div className={styles.grid}>
-      <div className={styles.card}>
-        <form action="">
-          <label htmlFor="">First Name</label>
-          <input type="text" name='firstName' value='First Name' />
+    <div className={styles.card}>
+      <form action="">
+        <label htmlFor="">FIRST NAME</label> 
           <br/>
-          <label htmlFor="">E-Mail</label>
-          <input type="text" name='email' value='Your e-mail here' />
-          <button type="submit">SUBSCRIBE</button>
-        </form>
-      </div>
+        <input className='input' type="text" name='firstName' placeholder='First Name' />
+        <div className={styles.nameIsTyped}>&#10003;</div>
+          <br/>
+        <label htmlFor="">E-Mail</label> 
+          <br/>
+        <input type="email" placeholder='Your e-mail here' /> 
+        <div className={styles.emailIsTyped}>&#10003;</div>
+          <br/>
+        <button type="email">SUBSCRIBE</button>
+      </form>
     </div>
   )
 }
