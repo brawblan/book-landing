@@ -14,7 +14,7 @@ const Author = () => {
           height={100}
         />
       </div>
-      <h1 className={styles.title}>
+      <h1 className={[styles.title, styles.typewriterText].join(' ')}>
         MARK WAHLBECK
       </h1>
       <p className={styles.description}>

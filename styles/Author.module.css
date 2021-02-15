@@ -27,6 +27,53 @@
   width: 100px;
   height: 100px;
 }
+.typewriterText {
+  overflow: hidden;
+  position: relative;
+  width: 18em;
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  font-size: 38px;
+  white-space: nowrap;
+
+  animation: typewriter 2s steps(28) 1s 1 normal both,
+  blinkTextCursor 400ms steps(28) 1s normal;
+
+}
+
+/*
+
+  animation-name: typewriter;
+  animation-duration: 4s;
+  animation-timing-function: steps(44);
+  animation-delay: 1s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: both;
+
+*/
+
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 9em;
+  }
+}
+
+@keyframes blinkTextCursor {
+
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+
+  to {
+    border-right-color: transparent;
+  }
+
+}
 
 @media (min-width: 768px) {
   .title {
