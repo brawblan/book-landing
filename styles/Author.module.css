@@ -1,16 +1,22 @@
-.title {
-  margin: 0;
-  /* padding: 0 1rem; */
-  line-height: 1.15;
-  font-size: 2.2em;
-  background: -webkit-linear-gradient(0deg,rgba(207,54,59,1) 0%, rgba(107,71,138,1) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.profileImg {
+  border-radius: 50%;
+  box-shadow: -2px 3px 15px rgb(255 255 255 / 60%);
+  margin-bottom: 20px;
+  width: 100px;
+  height: 100px;
 }
 
 .title,
 .description {
   text-align: center;
+}
+
+.title {
+  margin: 0;
+  font-size: 2.2em;
+  background: -webkit-linear-gradient(0deg,rgba(207,54,59,1) 0%, rgba(107,71,138,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .description {
@@ -20,13 +26,7 @@
   color: #a6a6a6;
 }
 
-.profileImg {
-  border-radius: 50%;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
-  margin-bottom: 20px;
-  width: 100px;
-  height: 100px;
-}
+
 .typewriterText {
   overflow: hidden;
   position: relative;
@@ -36,23 +36,8 @@
   white-space: nowrap;
 
   animation: typewriter 2s steps(28) 1s 1 normal both,
-  blinkTextCursor 400ms steps(28) 1s normal;
-
+  blinkTextCursor 400ms steps(28) 1s normal/*infinite*/; 
 }
-
-/*
-
-  animation-name: typewriter;
-  animation-duration: 4s;
-  animation-timing-function: steps(44);
-  animation-delay: 1s;
-  animation-iteration-count: 1;
-  animation-direction: normal;
-  animation-fill-mode: both;
-
-*/
-
-
 @keyframes typewriter {
   from {
     width: 0;
@@ -62,7 +47,6 @@
     width: 9em;
   }
 }
-
 @keyframes blinkTextCursor {
 
   from {

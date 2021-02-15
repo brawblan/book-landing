@@ -1,5 +1,4 @@
 .card {
-  height: 100%;
   justify-content: center;
   align-items: center;
   background-color: rgb(30, 30, 30);
@@ -21,7 +20,6 @@
 }
 
 .card p {
-  font-size: 1rem;
   font-weight: 300;
   line-height: 1.2;
   margin: 20px 5px;
@@ -37,16 +35,20 @@
   display: flex;
   flex-direction: column;
   margin-top: 30px;
+  padding: 0 2rem 0.5rem;
+  grid-gap: 20px;
   gap: 20px;
 }
 .btn {
   outline: 0;
   cursor: pointer;
 }
+
 .btn:hover,
 .btn:active {
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.65);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
 }
+
 .kickstart {
   background: rgb(207,54,59);
   background: linear-gradient(90deg, rgba(207,54,59,1) 0%, rgba(107,71,138,1) 100%);
@@ -54,7 +56,6 @@
   border-radius: 5px;
   height: 40px;
   color: #fff;
-  font-size: 0.82rem;
   font-weight: bold;
   padding: 0 30px;
 }
@@ -67,9 +68,7 @@
   border-radius: 40px;
   border: transparent;
   background-image: linear-gradient(90deg, rgba(207,54,59,1) 0%, rgba(107,71,138,1) 100%);
-	/* z-index: 2; */
 }
-
 .instaBtn a {
 	display: flex;
 	justify-content: center;
@@ -80,25 +79,20 @@
 	background: rgb(30, 30, 30);
 	border-radius: 40px;
 }
-.instaIcon * {
-  color: white;
-}
 .instaBtn a div:last-child {
   top: 3px;
 }
-
-.instaBtn:hover,
-.instaBtn *:hover {
+.instaBtn:hover a {
   background-color: rgb(69, 69, 69);
-  fill: #fff;
 }
 
 @media (min-width: 768px) {
   .card {
-    flex-wrap: nowrap;
     border-radius: 10px;
+    flex-wrap: nowrap;
   }
   .btns {
     flex-direction: row;
+    padding: 0;
   }
 }
