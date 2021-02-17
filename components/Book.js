@@ -28,8 +28,8 @@ const Book = () => {
           src="/book_cover.svg"
           alt="The Last Hacker Book Cover"
           layout='fixed'
-          width={185}
-          height={259}
+          width={130}
+          height={182}
         />
       </div>
       <div className={styles.bookDescription}>
