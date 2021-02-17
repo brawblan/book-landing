@@ -5,7 +5,7 @@ import styles from '../styles/Subscribe.module.css'
 const Subscribe = () => {
   const [nameTyped, setNameTyped] = useState(false)
   const [emailTyped, setEmailTyped] = useState(false)
-  const { handleSubmit, register, errors } = useForm()
+  const { handleSubmit, register } = useForm()
 
   const handleNameChange = ({ target: { value } }) => {
     if (value !== '') {
@@ -23,9 +23,9 @@ const Subscribe = () => {
   }
 
   const subscribe = async ({ email }) => {
-    const res = await fetch(`/api/subscribe?email=${email}`);
+    const res = await fetch(`/api/subscribe?email=${email}`)
     if (!res.ok) {
-      throw "There was an error subscribing to the list.";
+      throw "There was an error subscribing to the list."
     }
   };
 
@@ -77,7 +77,6 @@ const Subscribe = () => {
             false : 
             true}
         >SUBSCRIBE</button>
-        {errors?.email && <ErrorMessage message={errors.email.message} />}
       </form>
     </div>
   )
