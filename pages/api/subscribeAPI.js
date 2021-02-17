@@ -10,7 +10,7 @@ export default async (req, res) => {
     const API_KEY = process.env.CONVERTKIT_API_KEY;
     const API_URL = process.env.CONVERTKIT_API_URL;
 
-    const data = { email, api_key: API_KEY };
+    const data = { api_key: API_KEY, email };
 
     const response = await fetch(`${API_URL}forms/${FORM_ID}/subscribe`, {
       body: JSON.stringify(data),

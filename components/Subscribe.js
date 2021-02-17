@@ -29,7 +29,7 @@ const Subscribe = () => {
     }
   };
 
-  const onSubmit = (data) => subscribe(data);
+  const onSubmit = (data) => subscribe(data)
 
   return (
     <div className={styles.card}>
