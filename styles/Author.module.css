@@ -1,9 +1,17 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 .profileImg {
   border-radius: 50%;
-  box-shadow: -2px 3px 15px rgb(255 255 255 / 60%);
-  margin-bottom: 20px;
-  width: 100px;
-  height: 100px;
+  -webkit-box-shadow: -2px 3px 15px rgb(255, 255, 255, 0.6);
+          box-shadow: -2px 3px 15px rgb(255, 255, 255, 0.6);
+  margin-bottom: var(--size-20);
+  width: var(--size-100);
+  height: var(--size-100);
 }
 
 .title,
@@ -13,54 +21,73 @@
 
 .title {
   margin: 0;
-  font-size: 2.2em;
-  background: -webkit-linear-gradient(0deg,rgba(207,54,59,1) 0%, rgba(107,71,138,1) 100%);
+  font-size: var(--size-32);
+  background: var(--gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .description {
-  line-height: 0.5;
-  font-size: 0.8rem;
-  margin-bottom: 40px;
-  color: #a6a6a6;
+  line-height: var(--size-20);
+  font-size: var(--size-14);
+  font-weight: 600;
+  margin-bottom: var(--size-50);
+  color: var(--off-white);
 }
-
 
 .typewriterText {
   overflow: hidden;
   position: relative;
   width: 18em;
   border-right: 2px solid rgba(255, 255, 255, 0.75);
-  font-size: 38px;
   white-space: nowrap;
 
-  animation: typewriter 2s steps(28) 1s 1 normal both,
-  blinkTextCursor 400ms steps(28) 1s normal/*infinite*/; 
+  -webkit-animation: typewriter 2s steps(28) 1s 1 normal both,
+  blinkTextCursor 400ms steps(28) 800ms normal;
+
+          animation: typewriter 2s steps(28) 1s 1 normal both,
+  blinkTextCursor 400ms steps(28) 800ms normal; 
+}
+@-webkit-keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 9em;
+  }
 }
 @keyframes typewriter {
   from {
     width: 0;
   }
-
   to {
     width: 9em;
   }
 }
-@keyframes blinkTextCursor {
-
+@-webkit-keyframes blinkTextCursor {
   from {
     border-right-color: rgba(255, 255, 255, 0.75);
   }
-
   to {
     border-right-color: transparent;
   }
-
+}
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
 }
 
+@media (min-width: 350px) {
+  .title {
+    font-size: var(--size-40);
+  }
+}
 @media (min-width: 768px) {
   .title {
-    font-size: 3.2rem;
+    font-size: var(--size-50);
   }
 }

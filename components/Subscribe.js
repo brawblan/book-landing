@@ -7,13 +7,17 @@ const Subscribe = () => {
       <form action="">
         <label htmlFor="">FIRST NAME</label> 
           <br/>
-        <input className='input' type="text" name='firstName' placeholder='First Name' />
-        <div className={styles.nameIsTyped}>&#10003;</div>
+        <div className={styles.checkMark}>
+          <input className='input' type="text" name='firstName' placeholder='First Name' />
+          <div className={styles.nameIsTyped}>&#10003;</div>
+        </div>
           <br/>
         <label htmlFor="">E-Mail</label> 
           <br/>
-        <input type="email" placeholder='Your e-mail here' /> 
-        <div className={styles.emailIsTyped}>&#10003;</div>
+        <div className={styles.checkMark}>
+          <input type="email" placeholder='Your e-mail here' /> 
+          <div className={styles.emailIsTyped}>&#10003;</div>
+        </div>
           <br/>
         <button type="email">SUBSCRIBE</button>
       </form>

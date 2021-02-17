@@ -3,16 +3,13 @@ import Image from 'next/image'
 import styles from '../styles/Book.module.css'
 
 const Book = () => {
-  const [instaCam, setInstaCam] = useState("/instagram_grey.svg")
-  const [instaCursive, setInstaCursive] = useState("/insta_cursive_grey.svg")
+  const [instaCam, setInstaCam] = useState("/instagram_white.svg")
 
   const hoverLogo = () => {
     setInstaCam("/instagram_grad.svg")
-    setInstaCursive("/insta_cursive_white.svg")
   }
   const unhoverLogo = () => {
-    setInstaCam("/instagram_grey.svg")
-    setInstaCursive("/insta_cursive_grey.svg")
+    setInstaCam("/instagram_white.svg")
   }
 
   useEffect(() => {
@@ -31,8 +28,8 @@ const Book = () => {
           src="/book_cover.svg"
           alt="The Last Hacker Book Cover"
           layout='fixed'
-          width={200}
-          height={250}
+          width={185}
+          height={259}
         />
       </div>
       <div className={styles.bookDescription}>
@@ -47,8 +44,8 @@ const Book = () => {
           <button className={[styles.kickstart, styles.btn].join(' ')}>
             <a href="https://www.kickstarter.com/projects/markwahlbeck/999020694?ref=4lqfqx&token=ef7e371e" target="_blank">GET ON KICKSTARTER</a>
           </button>
-          <button className={[styles.instaBtn, styles.btn].join(' ')}>
-            <a onMouseOver={hoverLogo} onMouseOut={unhoverLogo} href="https://www.instagram.com/markwahlbeck/" target="_blank">
+          <button onMouseOver={hoverLogo} onMouseOut={unhoverLogo} className={[styles.instaBtn, styles.btn].join(' ')}>
+            <a href="https://www.instagram.com/markwahlbeck/" target="_blank">
               <Image
                 src={instaCam}
                 alt="Instagram logo"
@@ -57,7 +54,7 @@ const Book = () => {
                 height={20}
               />
               <Image
-                src={instaCursive}
+                src="/insta_cursive_white.svg"
                 alt="Instagram logo"
                 layout="fixed"
                 width={51}
