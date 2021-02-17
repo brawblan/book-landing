@@ -7,8 +7,8 @@
 
 .profileImg {
   border-radius: 50%;
-  -webkit-box-shadow: -2px 3px 15px rgb(255, 255, 255, 0.6);
-          box-shadow: -2px 3px 15px rgb(255, 255, 255, 0.6);
+  -webkit-box-shadow: -2px 3px 15px rgba(255, 255, 255, 0.6);
+          box-shadow: -2px 3px 15px rgba(255, 255, 255, 0.6);
   margin-bottom: var(--size-20);
   width: var(--size-100);
   height: var(--size-100);
