@@ -22,8 +22,9 @@ const Subscribe = () => {
     }
   }
 
-  const subscribe = async ({ email }) => {
-    const res = await fetch(`/api/subscribe?email=${email}`)
+  const subscribe = async (data) => {
+    const { first_name, email } = data
+    const res = await fetch(`/api/subscribe?email=${email}&first_name=${first_name}`)
     if (!res.ok) {
       throw "There was an error subscribing to the list."
     }
@@ -39,9 +40,11 @@ const Subscribe = () => {
           <input 
             onChange={handleNameChange} 
             type="text" 
-            name="name"
-            ref={register()}
-            placeholder="First Name "
+            name="first_name"
+            ref={register({
+              required: true              
+            })}
+            placeholder="First Name"
           />
           <div 
             className={nameTyped === false ? 
