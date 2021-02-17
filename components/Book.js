@@ -48,6 +48,7 @@ const Book = () => {
             <a href="https://www.instagram.com/markwahlbeck/" target="_blank">
               <Image
                 src={instaCam}
+                prefetch={false}
                 alt="Instagram logo"
                 layout="fixed"
                 width={20}

@@ -1,36 +1,20 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
-* Browsers: last 4 version
-*/
-
 .container {
   min-height: 100vh;
-  padding: var(--size-30) 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
+  max-width: 1140px;
+  padding: var(--size-30) 0;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .main {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  flex: 1;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .cardFlex {
-  display: -ms-grid;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: var(--size-30);
@@ -38,7 +22,6 @@
 
 @media (min-width: 1024px) {
   .cardFlex {
-    -ms-grid-columns: 4fr 2fr;
     grid-template-columns: 4fr 2fr;
   }
 }

@@ -1,0 +1,14 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: var(--size-32);
+  background-color: var(--dark-grey);
+}
+
+@media (min-width: 768px) {
+  .card {
+    border-radius: 10px;
+    text-align: left;
+  }
+}
