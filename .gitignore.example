@@ -38,3 +38,6 @@ yarn-error.log*
 
 #Gitignore itself
 .gitignore
+
+#Local files of NPM
+package-lock.json
