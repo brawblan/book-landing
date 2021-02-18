@@ -112,7 +112,7 @@
     font-size: var(--size-28);
   }
   .card p {
-    margin: 0 auto;
+    margin: var(--size-11) auto;
   }
   .card > .bookImg {
     height: 212px

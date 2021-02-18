@@ -35,7 +35,7 @@ const Book = () => {
       <div className={styles.bookDescription}>
         <h1>THE LAST HACKER</h1>
         <p>
-          In this show, you'll explore stories of the future that we hope should never be and possibilities that blur the lines between fiction and reality.
+          In this book, you'll explore a story of a future that we can only hope will never be and possibilities that blur the lines between fiction and reality.
         </p>
         <p>
           My name is Mark Wahlbeck, and welcome to the World of Wahlbeck!
