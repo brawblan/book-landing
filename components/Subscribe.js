@@ -43,7 +43,7 @@ const Subscribe = ({ onClick }) => {
           to get updates and free books!
         </p>
       </div>
-      <form method="POST" onSubmit={handleSubmit(onSubmit)}>
+      <form method="GET" onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.inputBox}>
           <input 
             onChange={handleNameChange} 

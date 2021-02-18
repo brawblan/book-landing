@@ -16,7 +16,7 @@ export default async (req, res) => {
       body: JSON.stringify(data),
       headers: { "Content-Type": "application/json" },
       method: "POST",
-    });
+    })
     
     if (response.status >= 400) {
       return res
