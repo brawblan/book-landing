@@ -28,12 +28,12 @@ const Book = () => {
           src="/book_cover.svg"
           alt="The Last Hacker Book Cover"
           layout='fixed'
-          width={185}
-          height={259}
+          width={130}
+          height={182}
         />
       </div>
       <div className={styles.bookDescription}>
-        <h2>THE LAST HACKER</h2>
+        <h1>THE LAST HACKER</h1>
         <p>
           In this show, you'll explore stories of the future that we hope should never be and possibilities that blur the lines between fiction and reality.
         </p>

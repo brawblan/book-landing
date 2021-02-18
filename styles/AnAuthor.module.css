@@ -1,6 +1,7 @@
 .profileImg {
   border-radius: 50%;
-  box-shadow: -2px 3px 15px rgb(255, 255, 255, 0.6);
+  -webkit-box-shadow: -2px 3px 15px rgba(255, 255, 255, 0.6);
+          box-shadow: -2px 3px 15px rgba(255, 255, 255, 0.6);
   margin-bottom: var(--size-20);
   width: var(--size-100);
   height: var(--size-100);
@@ -20,11 +21,11 @@
 }
 
 .description {
-  line-height: var(--size-20);
+  color: var(--ar-txt-grey-subtext);
   font-size: var(--size-14);
   font-weight: 600;
+  line-height: var(--size-20);
   margin-bottom: var(--size-50);
-  color: var(--ar-txt-grey-subtext);
 }
 
 .typewriterText {
@@ -40,13 +41,28 @@
           animation: typewriter 2s steps(28) 1s 1 normal both,
   blinkTextCursor 400ms steps(28) 800ms normal; 
 }
-
+@-webkit-keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 9em;
+  }
+}
 @keyframes typewriter {
   from {
     width: 0;
   }
   to {
     width: 9em;
+  }
+}
+@-webkit-keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
   }
 }
 @keyframes blinkTextCursor {

@@ -1,20 +1,14 @@
 .card {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   text-align: center;
   padding: var(--size-32);
   background-color: var(--dark-grey);
+  width: 100%;
 }
 
 .card .subscribeMessage {
+  margin-top: 0;
   margin-bottom: 0;
 }
 .subscribeMessage h2 {
@@ -33,7 +27,7 @@
 .card form {
   width: 100%;
   position: relative;
-  margin-top: 0;
+  margin: 0;
 }
 .card label {
   color: var(--light-grey);
@@ -49,12 +43,8 @@
   width: 100%;
 }
 .disabledBtn {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  align-items: flex-end;
   border: transparent;
   background: var(--medDark-grey);
   color: var(--white);
@@ -62,7 +52,6 @@
   border-radius: var(--size-5);
   height: var(--size-40);
   padding: var(--size-11) var(--size-30);
-  margin: var(--size-30) auto 0;
   outline: 0;
 }
 .enabledBtn {
@@ -75,15 +64,9 @@
 }
 
 .inputBox {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   height: var(--size-40);
   padding: var(--size-5) var(--size-14);
@@ -95,15 +78,9 @@
 
 .nameIsTyped, 
 .emailIsTyped {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   font-size: var(--size-11);
   width: var(--size-20);
   height: var(--size-20);
@@ -115,18 +92,41 @@
   background-color: var(--success);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 0px) AND (max-width: 719px) {
+  .card label {
+    display: none;
+  }
+
+  .card h2, .card p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .card p {
+    align-self: flex-start;
+    margin-top: 3px
+  }
+
+  .card > form > div {
+    margin-top: var(--size-30);
+  }
+  .card > form > div:first-of-type {
+    margin-top: var(--size-20);
+  }
+  .card button,
+  .card button.active {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 720px) {
   .card {
     border-radius: 10px;
     text-align: left;
-    padding: var(--size-14) var(--size-32);
+    align-items: start;
   }
   .card button {
-    margin: var(--size-30) 0 0;
-  }
-}
-@media (min-width: 1024px) {
-  .card {
-    margin-left: var(--size-5);
+    margin-top: var(--size-30)
   }
 }
