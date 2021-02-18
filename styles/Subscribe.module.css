@@ -44,7 +44,7 @@
 }
 .disabledBtn {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   border: transparent;
   background: var(--medDark-grey);
   color: var(--white);
