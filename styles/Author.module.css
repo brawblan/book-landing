@@ -28,11 +28,11 @@
 }
 
 .description {
-  line-height: var(--size-20);
+  color: var(--ar-txt-grey-subtext);
   font-size: var(--size-14);
   font-weight: 600;
+  line-height: var(--size-20);
   margin-bottom: var(--size-50);
-  color: var(--off-white);
 }
 
 .typewriterText {
