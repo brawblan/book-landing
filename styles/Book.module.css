@@ -1,11 +1,22 @@
 .card {
-  justify-content: center;
-  align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-bottom: var(--size-20);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: var(--dark-grey);
   border: transparent;
   color: var(--off-white);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding: var(--size-16);
 }
 
@@ -24,6 +35,8 @@
   font-weight: 300;
   line-height: 1.5;
   margin: var(--size-11) var(--size-5);
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
   max-width: fit-content;
 }
 
@@ -32,16 +45,29 @@
 }
 
 .bookDescription {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-self: stretch;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-item-align: stretch;
+      align-self: stretch;
   margin: var(--size-16);
 }
 
 .btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   padding: 0 var(--size-30) var(--size-5);
 }
 .btn {
@@ -62,7 +88,9 @@
 }
 
 .instaBtn {
-  align-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 	position: relative;
   width: 10rem;
 	padding: 0.215rem;
@@ -71,9 +99,14 @@
   background-image: var(--gradient);
 }
 .instaBtn a {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: space-around;
-	align-items: center;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
   padding: var(--size-5) var(--size-20);
 	background: var(--dark-grey);
 	border-radius: var(--size-40);
@@ -96,7 +129,9 @@
 
 @media (max-width: 425px) {
   .kickstart {
-    align-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
     padding: 0 var(--size-20);
   }
 }
@@ -104,15 +139,26 @@
 @media (min-width: 768px) {
   .card {
     border-radius: 10px;
-    flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-flex: 2;
+        -ms-flex: 2;
+            flex: 2;
+    margin-bottom: 0;
+    margin-right: var(--size-5);
   }
   .card * {
     text-align: left;
   }
   .btns {
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     padding: 0;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .kickstart {
     margin-left: 0;

@@ -41,10 +41,16 @@ const Book = () => {
           My name is Mark Wahlbeck, and welcome to the World of Wahlbeck!
         </p>
         <div className={styles.btns}>
-          <button className={[styles.kickstart, styles.btn].join(' ')}>
-            <a href="https://www.kickstarter.com/projects/markwahlbeck/999020694?ref=4lqfqx&token=ef7e371e" target="_blank">GET ON KICKSTARTER</a>
-          </button>
-          <button onMouseOver={hoverLogo} onMouseOut={unhoverLogo} className={[styles.instaBtn, styles.btn].join(' ')}>
+          <a href="https://www.kickstarter.com/projects/markwahlbeck/999020694?ref=4lqfqx&token=ef7e371e" target="_blank">
+            <button className={[styles.kickstart, styles.btn].join(' ')}>
+              GET ON KICKSTARTER
+            </button>
+          </a>
+          <button 
+            onMouseOver={hoverLogo} 
+            onMouseOut={unhoverLogo} 
+            className={[styles.instaBtn, styles.btn].join(' ')}
+          >
             <a href="https://www.instagram.com/markwahlbeck/" target="_blank">
               <Image
                 src={instaCam}

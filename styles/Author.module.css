@@ -1,14 +1,6 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
-* Browsers: last 4 version
-*/
-
 .profileImg {
   border-radius: 50%;
-  -webkit-box-shadow: -2px 3px 15px rgb(255, 255, 255, 0.6);
-          box-shadow: -2px 3px 15px rgb(255, 255, 255, 0.6);
+  box-shadow: -2px 3px 15px rgb(255, 255, 255, 0.6);
   margin-bottom: var(--size-20);
   width: var(--size-100);
   height: var(--size-100);
@@ -48,6 +40,7 @@
           animation: typewriter 2s steps(28) 1s 1 normal both,
   blinkTextCursor 400ms steps(28) 800ms normal; 
 }
+
 @-webkit-keyframes typewriter {
   from {
     width: 0;
@@ -56,6 +49,7 @@
     width: 9em;
   }
 }
+
 @keyframes typewriter {
   from {
     width: 0;
