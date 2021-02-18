@@ -1,5 +1,4 @@
 export default async (req, res) => {
-  console.log(req.query);
   const { first_name, email } = req.query;
 
   if (!email) {
@@ -9,11 +8,9 @@ export default async (req, res) => {
   try {
     const API_URL = process.env.CONVERTKIT_API_URL;
     const API_KEY = process.env.CONVERTKIT_API_KEY;
-    const FORM_ID = '2048102';
-    // const FORM_ID = process.env.CONVERTKIT_FORM_ID;
+    const FORM_ID = process.env.CONVERTKIT_FORM_ID;
     
     const data = { first_name, email, api_key: API_KEY };
-    console.log(data);
     
     const response = await fetch(`${API_URL}forms/${FORM_ID}/subscribe`, {
       body: JSON.stringify(data),
