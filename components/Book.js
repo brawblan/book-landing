@@ -44,7 +44,7 @@ const Book = () => {
           <button className={[styles.kickstart, styles.btn].join(' ')}>
             <a href="https://www.kickstarter.com/projects/markwahlbeck/999020694?ref=4lqfqx&token=ef7e371e" target="_blank">GET ON KICKSTARTER</a>
           </button>
-          <button onMouseOver={hoverLogo} onMouseOut={unhoverLogo} className={[styles.instaBtn, styles.btn].join(' ')}>
+          <button className={[styles.instaBtn, styles.btn].join(' ')}>
             <a href="https://www.instagram.com/markwahlbeck/" target="_blank">
               <Image
                 src={instaCam}
