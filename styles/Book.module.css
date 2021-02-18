@@ -6,21 +6,21 @@
 */
 
 .card {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: var(--dark-grey);
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  background-color: var(--ar-bg-light-gray);
   border: transparent;
-  color: var(--off-white);
+  color: var(--ar-txt-white);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding: var(--size-16);
+  padding: var(--size-30) var(--size-30) var(--size-24);
 }
 
 .card * {
@@ -28,8 +28,7 @@
 }
 
 .card h2 {
-  margin: 0;
-  margin-bottom: var(--size-5);
+  margin: 0 0 var(--size-20) 0;
   font-size: var(--size-32);
   color: var(--off-white);
 }
@@ -43,11 +42,19 @@
   max-width: fit-content;
 }
 
-.bookImg {
-  margin: var(--size-16);
+.card p:last-of-type {
+    margin-bottom: var(--size-30);
+}
+
+.card > .bookImg {
+    width: 130px;
+    height: 182px;
 }
 
 .bookDescription {
+    width: 100%;
+    position: relative;
+    top: -6px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -55,12 +62,11 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-item-align: stretch;
-      align-self: stretch;
-  margin: var(--size-16);
+    margin-left: var(--size-30);
+}
+
+.bookDescription > p {
+    margin: 0 0 var(--size-20) 0;
 }
 
 .btns {
@@ -74,13 +80,8 @@
   padding: 0 var(--size-30) var(--size-5);
 }
 .btn {
-  margin: 0.5rem;
   outline: 0;
   cursor: pointer;
-}
-.btn:active {
-  -webkit-box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
-          box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
 }
 
 .kickstart {
@@ -95,26 +96,25 @@
 }
 
 .instaBtn {
+    margin-left: var(--size-20);
+    height: var(--size-40);
   -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-	position: relative;
-  width: 10rem;
-	padding: 0.215rem;
+  -ms-grid-row-align: center;
+    position: relative;
+    padding: 2px;
   border-radius: var(--size-40);
   border: transparent;
   background-image: var(--gradient);
 }
 .instaBtn a {
+    height: var(--size-36);
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	-ms-flex-pack: distribute;
-	    justify-content: space-around;
 	-webkit-box-align: center;
 	    -ms-flex-align: center;
 	        align-items: center;
-  padding: var(--size-5) var(--size-20);
+  padding: var(--size-5) var(--size-15);
 	background: var(--dark-grey);
 	border-radius: var(--size-40);
 }
@@ -122,29 +122,54 @@
   top: 3px;
 }
 .instaBtn:hover a {
-  background: var(--medDark-grey);
+    background: transparent;
 }
 
-@media (max-width: 350px) {
+.instaBtn > a > div:first-of-type {
+    margin-right: 15px !important;
+}
+
+@media (min-width: 0px) AND (max-width: 719px) {
   .card h2 {
     font-size: var(--size-28);
   }
   .btn {
-    margin: 0.5rem 0;
+    /*margin: 0.5rem 0;*/
   }
-}
-
-@media (max-width: 425px) {
-  .kickstart {
-    -ms-flex-item-align: center;
+    .kickstart {
+        -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
-  }
+    }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 0px) AND (max-width: 719px) {
+    .card {
+        justify-content: center;
+    }
+    .card > .bookImg {
+        height: 212px
+    }
+    .card p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .bookDescription {
+        margin-left: 0px;
+    }
+    .instaBtn {
+        margin-left: 0px;
+        margin-top: var(--size-30);
+        align-self: center;
+    }
+    .instaBtn > a {
+        max-width: fit-content;
+    }
+}
+
+@media (min-width: 720px) {
   .card {
-    border-radius: 10px;
+    border-radius: 5px;
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
   }
@@ -157,9 +182,6 @@
         -ms-flex-direction: row;
             flex-direction: row;
     padding: 0;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
   }
   .kickstart {
     margin-left: 0;
