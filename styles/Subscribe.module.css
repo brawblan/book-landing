@@ -5,17 +5,35 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   text-align: center;
   padding: var(--size-32);
   background-color: var(--dark-grey);
 }
 
+.card .subscribeMessage {
+  margin-bottom: 0;
+}
+.subscribeMessage h2 {
+  font-size: var(--size-20);
+  color: var(--off-white);
+  margin: 0;
+}
+.subscribeMessage p {
+  color: var(--off-white);
+  margin: var(--size-5) 0;
+}
+
 .card * {
-  margin: var(--size-11) 0;
+  margin: var(--size-20) 0;
 }
 .card form {
   width: 100%;
   position: relative;
+  margin-top: 0;
 }
 .card label {
   color: var(--light-grey);
@@ -101,9 +119,14 @@
   .card {
     border-radius: 10px;
     text-align: left;
-    margin-left: var(--size-5);
+    padding: var(--size-14) var(--size-32);
   }
   .card button {
     margin: var(--size-30) 0 0;
+  }
+}
+@media (min-width: 1024px) {
+  .card {
+    margin-left: var(--size-5);
   }
 }

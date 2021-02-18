@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from '../styles/SubscribeMessage.module.css'
 
-const SubscribeMessage = () => {
+const SubscribeMessage = ({ onClick }) => {
 
   return (
     <div className={styles.card}>

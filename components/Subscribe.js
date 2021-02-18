@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import styles from '../styles/Subscribe.module.css'
 
-const Subscribe = () => {
+const Subscribe = ({ onClick }) => {
   const [nameTyped, setNameTyped] = useState(false)
   const [emailTyped, setEmailTyped] = useState(false)
   const { handleSubmit, register } = useForm()
@@ -21,7 +21,6 @@ const Subscribe = () => {
       setEmailTyped(false)
     }
   }
-
   const subscribe = async (data) => {
     const { first_name, email } = data
     const res = await fetch(`/api/subscribe?email=${email}&first_name=${first_name}`)
@@ -29,13 +28,22 @@ const Subscribe = () => {
       throw "There was an error subscribing to the list."
     }
   };
-
-  const onSubmit = (data) => subscribe(data)
+  const onSubmit = (data) => {
+    subscribe(data)
+    onClick()
+  }
 
   return (
     <div className={styles.card}>
-      <form action="" onSubmit={handleSubmit(onSubmit)}>
-        <label htmlFor="">FIRST NAME</label> 
+      <div className={styles.subscribeMessage}>
+        <h2>
+          SUBSCRIBE HERE
+        </h2>
+        <p>
+          to get updates and free books!
+        </p>
+      </div>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.inputBox}>
           <input 
             onChange={handleNameChange} 
@@ -52,7 +60,6 @@ const Subscribe = () => {
               [styles.nameIsTyped, styles.isTyped].join(' ')}
           >&#10003;</div>
         </div>
-        <label htmlFor="">E-Mail</label> 
         <div className={styles.inputBox}>
           <input 
             onChange={handleEmailChange} 
