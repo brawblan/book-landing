@@ -9,37 +9,73 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  text-align: center;
-  padding: var(--size-32);
-  background-color: var(--dark-grey);
+  flex-direction: column;
+  padding: var(--size-30);
+  background-color: var(--ar-bg-light-gray);
+  align-items: start;
 }
 
-.card * {
-  margin: var(--size-11) 0;
+.card h2 {
+  font-size: var(--size-18);
+  line-height: var(--size-18);
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-transform: uppercase;
+  align-self: flex-start;
 }
+
+.card p {
+  align-self: flex-start;
+  margin-top: 3px
+}
+
 .card form {
   width: 100%;
   position: relative;
 }
 .card label {
-  color: var(--light-grey);
+  display: none;  /*Change to block if need to be shown*/
+  color: var(--ar-bg-grey);
   font-size: var(--size-14);
+  font-weight: bold;
+  margin: var(--size-20) 0 var(--size-14) 0
 }
+
+.card > form > div {
+  margin-top: var(--size-24);
+}
+
+.card label:first-of-type {
+  margin-top: 0;
+}
+
 .card input {
   width: 100%;
   height: var(--size-40);
   padding: var(--size-5) var(--size-32) var(--size-5) var(--size-14);
   color: var(--white);
-  font-weight: bold;
-  outline: 0;
-  background: var(--medDark-grey);
+  outline: none;
+  font-size: 14px;
+  background: var(--ar-bg-soft-grey);
   border-top: 0;
   border-left: 0;
   border-right: 0;
-  border-radius: 1px 1px 0 0;
+  border-radius: 3px 3px 0 0;
   border-image-source: var(--gradient);
   border-image-slice: 1;
 }
+
+.card input::placeholder,
+.card input::-ms-input-placeholder,
+.cardinput:-ms-input-placeholder {
+  color: var(--ar-txt-grey);
+}
+.card input::placeholder {
+  opacity: 1
+}
+
 .card button {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -48,20 +84,18 @@
       -ms-flex-align: center;
           align-items: center;
   border: transparent;
-  background: var(--gradient);
-  background: var(--medDark-grey);
-  color: var(--white);
+  background: var(--ar-bg-soft-grey);
+  color: var(--ar-txt-white);
   font-weight: bold;
   border-radius: var(--size-5);
   height: var(--size-40);
   padding: var(--size-11) var(--size-30);
-  margin: var(--size-30) auto 0;
+  margin: var(--size-30) 0 0 0;
   outline: 0;
   cursor: pointer;
 }
-.card button:active {
-  -webkit-box-shadow: 0 0 10px rgba(255, 255, 255, 0.65);
-          box-shadow: 0 0 10px rgba(255, 255, 255, 0.65);
+
+.card button.active {
   background: var(--gradient);
 }
 
@@ -74,10 +108,41 @@
           align-items: center;
   font-size: var(--size-11);
   font-weight: bold;
-  /* center check in circle, p-top 2px should work */
+  position: relative;
 }
 
-/* .nameIsTyped, 
+.checkedTrue {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  right: var(--size-10);
+  background-color: var(--ar-bg-green);
+  color: var(--ar-txt-white);
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+
+}
+
+.checkedTrueActive {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  right: var(--size-10);
+  background-color: var(--ar-bg-green);
+  color: var(--ar-txt-white);
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  display: flex;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* .nameIsTyped,
 .emailIsTyped {
   font-size: var(--size-11);
   text-align: center;
@@ -90,17 +155,45 @@
 }
 .nameIsTyped {
   top: 22px;
-} 
+}
 .emailIsTyped {
   top: 105px;
 } */
 
-@media (min-width: 768px) {
+@media (min-width: 0px) AND (max-width: 719px) {
+  .card label {
+    display: none;
+  }
+
+  .card h2, .card p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .card p {
+    align-self: flex-start;
+    margin-top: 3px
+  }
+
+  .card > form > div {
+    margin-top: var(--size-30);
+  }
+  .card > form > div:first-of-type {
+    margin-top: var(--size-20);
+  }
+  .card button,
+  .card button.active {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 720px) {
   .card {
-    border-radius: 10px;
+    border-radius: 5px;
     text-align: left;
   }
   .card button {
-    margin: var(--size-30) 0 0;
+    margin-top: var(--size-30)
   }
 }
