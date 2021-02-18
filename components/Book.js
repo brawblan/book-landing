@@ -33,7 +33,7 @@ const Book = () => {
         />
       </div>
       <div className={styles.bookDescription}>
-        <h2>THE LAST HACKER</h2>
+        <h1>THE LAST HACKER</h1>
         <p>
           In this show, you'll explore stories of the future that we hope should never be and possibilities that blur the lines between fiction and reality.
         </p>
