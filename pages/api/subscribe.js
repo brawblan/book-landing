@@ -1,3 +1,5 @@
+import fetch from 'isomorphic-unfetch'
+
 export default async (req, res) => {
   const { first_name, email } = req.query
 
