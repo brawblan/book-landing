@@ -24,7 +24,7 @@ const Subscribe = ({ onClick }) => {
   const subscribe = async (data) => {
     console.log(process.env.NODE_ENV);
     const { first_name, email } = data
-    const res = await fetch(`/api/subscribe?email=${email}&first_name=${first_name}`)
+    const res = await fetch(`/pages/api/subscribe?email=${email}&first_name=${first_name}`)
     if (!res.ok) {
       throw "There was an error subscribing to the list."
     }
