@@ -18,14 +18,12 @@ export default function Home() {
       <Meta />
       <main className={styles.main}>
         <Author />
-
         <div className={styles.cardFlex}>
           <Book />
           {subscribed ? 
-          <Subscribe onClick={handleSubscribeChange} /> : 
-          <SubscribeMessage onClick={handleSubscribeChange} />}
+            <Subscribe onClick={handleSubscribeChange} /> : 
+            <SubscribeMessage onClick={handleSubscribeChange} />}
         </div>
-      
       </main>
     </div>
   )

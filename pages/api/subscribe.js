@@ -1,8 +1,9 @@
 export default async (req, res) => {
   const { first_name, email } = req.query
+  console.log(first_name, email);
 
-  if (!email) {
-    return res.status(400).json({ error: "Email is required." })
+  if (!email || !first_name) {
+    return res.status(400).json({ error: "Email and/or Name is required." })
   }
 
   try {
@@ -13,10 +14,11 @@ export default async (req, res) => {
     const data = { api_key: API_KEY, first_name, email  }
     
     const response = await fetch(`${API_URL}forms/${FORM_ID}/subscribe`, {
-      body: JSON.stringify(data),
-      headers: { "Content-Type": "application/json" },
       method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
     })
+    console.log(response);
     
     if (response.status >= 400) {
       return res

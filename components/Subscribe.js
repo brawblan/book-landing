@@ -6,7 +6,7 @@ const Subscribe = ({ onClick }) => {
   const [nameTyped, setNameTyped] = useState(false)
   const [emailTyped, setEmailTyped] = useState(false)
   const { handleSubmit, register } = useForm()
-
+  
   const handleNameChange = ({ target: { value } }) => {
     if (value !== '') {
       setNameTyped(true)
@@ -43,7 +43,7 @@ const Subscribe = ({ onClick }) => {
           to get updates and free books!
         </p>
       </div>
-      <form method="GET" onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.inputBox}>
           <input 
             onChange={handleNameChange} 
