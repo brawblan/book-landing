@@ -23,7 +23,7 @@ const Subscribe = ({ onClick }) => {
   }
   const subscribe = async (data) => {
     const { first_name, email } = data
-    const res = await fetch(`/api/subscribe?email=${email}&first_name=${first_name}`)
+    const res = await fetch(`https://book-landing.vercel.app/api/subscribe?email=${email}&first_name=${first_name}`)
     if (!res.ok) {
       throw "There was an error subscribing to the list."
     }
