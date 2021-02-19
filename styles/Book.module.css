@@ -1,8 +1,8 @@
 .card {
   flex: 1;
   margin-bottom: var(--size-20);
-  justify-content: start;
-  align-items: start;
+  justify-content: flex-start;
+  align-items: flex-start;
   background-color: var(--dark-grey);
   border: transparent;
   color: var(--off-white);

@@ -1,11 +1,10 @@
 export default async (req, res) => {
   const { first_name, email } = req.query
-  console.log(first_name, email);
 
   if (!email || !first_name) {
     return res.status(400).json({ error: "Email and/or Name is required." })
   }
-
+  
   try {
     const API_URL = process.env.CONVERTKIT_API_URL
     const API_KEY = process.env.CONVERTKIT_API_KEY
@@ -18,7 +17,6 @@ export default async (req, res) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     })
-    console.log(response);
     
     if (response.status >= 400) {
       return res
