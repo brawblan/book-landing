@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
+import fetch from 'isomorphic-unfetch'
 import styles from '../styles/Subscribe.module.css'
 
 const Subscribe = ({ onClick }) => {
