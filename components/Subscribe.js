@@ -6,22 +6,8 @@ import styles from '../styles/Subscribe.module.css'
 const Subscribe = ({ onClick }) => {
   const [nameTyped, setNameTyped] = useState(false)
   const [emailTyped, setEmailTyped] = useState(false)
-  const { handleSubmit, register } = useForm()
-  
-  const handleNameChange = ({ target: { value } }) => {
-    if (value !== '') {
-      setNameTyped(true)
-    } else {
-      setNameTyped(false)
-    }
-  }
-  const handleEmailChange = ({ target: { value } }) => {
-    if (value !== '') {
-      setEmailTyped(true)
-    } else {
-      setEmailTyped(false)
-    }
-  }
+  const { handleSubmit } = useForm()
+
   const subscribe = async (data) => {
     const { first_name, email } = data
     const res = await fetch(`/api/subscribe?email=${email}&first_name=${first_name}`)
@@ -48,46 +34,32 @@ const Subscribe = ({ onClick }) => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.inputBox}>
           <input 
-            onChange={handleNameChange} 
+            onChange={({ target: { value }}) => value.length ? setNameTyped(true) : setNameTyped(false)} 
             type="text" 
             name="first_name"
-            ref={register({
-              required: true              
-            })}
             placeholder="First Name"
+            required
           />
           <div 
-            className={nameTyped === false ? 
-              styles.nameIsTyped : 
-              [styles.nameIsTyped, styles.isTyped].join(' ')}
+            className={!nameTyped ? styles.nameIsTyped : `${styles.nameIsTyped} ${styles.isTyped}`}
           >&#10003;</div>
         </div>
         <div className={styles.inputBox}>
           <input 
-            onChange={handleEmailChange} 
+            onChange={({ target: { value }}) => value.length ? setEmailTyped(true) : setEmailTyped(false)} 
             type="email" 
             name="email"
-            ref={register({
-              required: "Email is required.",
-              value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
-              message: "Please enter a valid email."
-            })}
             placeholder="Your e-mail here"
+            required
           /> 
           <div 
-            className={emailTyped === false ? 
-              styles.emailIsTyped : 
-              [styles.emailIsTyped, styles.isTyped].join(' ')}
+            className={!emailTyped ? styles.emailIsTyped : `${styles.emailIsTyped} ${styles.isTyped}`}
           >&#10003;</div>
         </div>
         <button 
-          className={nameTyped && emailTyped ? 
-            [styles.disabledBtn, styles.enabledBtn].join(' ') : 
-            styles.disabledBtn} 
+          className={nameTyped && emailTyped ? `${styles.disabledBtn} ${styles.enabledBtn}` : styles.disabledBtn} 
           type="submit" 
-          disabled={nameTyped && emailTyped ? 
-            false : 
-            true}
+          disabled={!nameTyped && !emailTyped}
         >SUBSCRIBE</button>
       </form>
     </div>

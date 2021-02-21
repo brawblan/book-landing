@@ -7,24 +7,22 @@ import SubscribeMessage from '../components/SubscribeMessage'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
-
   const [subscribed, setSubscribed] = useState(true)
-  const handleSubscribeChange = () => {
-    setSubscribed(!subscribed)
-  }
 
   return (
-    <div className={styles.container}>
+    <>
       <Meta />
-      <main className={styles.main}>
-        <Author />
-        <div className={styles.cardFlex}>
-          <Book />
-          {subscribed ? 
-            <Subscribe onClick={handleSubscribeChange} /> : 
-            <SubscribeMessage onClick={handleSubscribeChange} />}
-        </div>
-      </main>
-    </div>
+      <div className={styles.container}>
+        <main className={styles.main}>
+          <Author />
+          <div className={styles.cardFlex}>
+            <Book />
+            {subscribed ? 
+              <Subscribe onClick={() => setSubscribed(!subscribed)} /> : 
+              <SubscribeMessage onClick={() => setSubscribed(!subscribed)} />}
+          </div>
+        </main>
+      </div>
+    </>
   )
 }

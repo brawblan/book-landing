@@ -1,25 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import styles from '../styles/Book.module.css'
 
 const Book = () => {
   const [instaCam, setInstaCam] = useState("/instagram_white.svg")
-
-  const hoverLogo = () => {
-    setInstaCam("/instagram_grad.svg")
-  }
-  const unhoverLogo = () => {
-    setInstaCam("/instagram_white.svg")
-  }
-
-  useEffect(() => {
-    document.addEventListener('onmouseover', hoverLogo);
-    document.addEventListener('onmouseout', unhoverLogo);
-    return () => {
-      document.removeEventListener('onmouseover', hoverLogo);
-      document.removeEventListener('onmouseout', unhoverLogo);
-    }
-  })
 
   return (
     <div className={styles.card}>
@@ -41,17 +25,17 @@ const Book = () => {
           My name is Mark Wahlbeck, and welcome to the World of Wahlbeck!
         </p>
         <div className={styles.btns}>
-          <a href="https://www.kickstarter.com/projects/markwahlbeck/999020694?ref=4lqfqx&token=ef7e371e" target="_blank">
-            <button className={[styles.kickstart, styles.btn].join(' ')}>
+          <a href="https://www.kickstarter.com/" target="_blank">
+            <button className={`${styles.kickstart} ${styles.btn}`}>
               GET ON KICKSTARTER
             </button>
           </a>
           <button 
-            onMouseOver={hoverLogo} 
-            onMouseOut={unhoverLogo} 
-            className={[styles.instaBtn, styles.btn].join(' ')}
+            onMouseOver={() => setInstaCam("/instagram_grad.svg")} 
+            onMouseOut={() => setInstaCam("/instagram_white.svg")} 
+            className={`${styles.instaBtn} ${styles.btn}`}
           >
-            <a href="https://www.instagram.com/markwahlbeck/" target="_blank">
+            <a href="https://www.instagram.com/" target="_blank">
               <Image
                 src={instaCam}
                 prefetch={false}
